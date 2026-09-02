@@ -1,6 +1,6 @@
 # FleetTrack — Vehicle Fleet Management System
 
-FleetTrack is a monolithic backend platform built with Java 21 and Spring Boot 3. It offers an enterprise-grade solution for managing vehicle fleets, driver profiles, service/maintenance records, real-time GPS location tracking via WebSockets, and downloadable PDF reports.
+FleetTrack is a monolithic backend platform built with Java 21 and Spring Boot 4.1.1. It provides a secure and scalable REST API for managing users, vehicle fleets, orders, and administrative operations, with JWT-based authentication and role-based authorization. The platform also supports real-time communication via WebSockets, email notifications, PostgreSQL persistence, and CSV data exports.
 
 ---
 
@@ -19,15 +19,16 @@ FleetTrack is a monolithic backend platform built with Java 21 and Spring Boot 3
 
 ## 🛠 Tech Stack
 
-- **Java Version**: Java 21
-- **Framework**: Spring Boot 3.x (Web, Security, Data JPA, WebSocket, Cache)
-- **Database**: PostgreSQL
-- **Database Migration**: Flyway
-- **In-Memory Cache**: Redis
-- **Security**: JSON Web Token (JWT) & BCrypt
-- **PDF Generator**: OpenPDF (`com.github.librepdf:openpdf:3.0.5`)
-- **API Documentation**: Springdoc OpenAPI / Swagger UI
-- **Build Tool**: Gradle / Maven
+* **Java Version**: Java 21
+* **Framework**: Spring Boot 4.1.1
+* **Web**: Spring MVC
+* **Security**: Spring Security + JSON Web Token (JWT) + BCrypt
+* **Database**: PostgreSQL
+* **ORM**: Spring Data JPA / Hibernate
+* **Email**: Spring Boot Mail
+* **Real-Time Communication**: WebSocket
+* **API Documentation**: Springdoc OpenAPI / Swagger UI
+* **Build Tool**: Gradle
 
 ---
 ## ⚙️ Environment Variables & Setup
