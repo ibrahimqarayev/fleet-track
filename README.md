@@ -1,6 +1,6 @@
 # FleetTrack — Vehicle Fleet Management System
 
-FleetTrack is a production-ready, monolithic backend platform built with **Java 21** and **Spring Boot 3**. It offers an enterprise-grade solution for managing vehicle fleets, driver profiles, service/maintenance records, real-time GPS location tracking via WebSockets, and downloadable PDF reports.
+FleetTrack is a monolithic backend platform built with Java 21 and Spring Boot 3. It offers an enterprise-grade solution for managing vehicle fleets, driver profiles, service/maintenance records, real-time GPS location tracking via WebSockets, and downloadable PDF reports.
 
 ---
 
