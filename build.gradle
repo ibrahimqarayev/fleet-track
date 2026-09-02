@@ -44,7 +44,7 @@ dependencies {
 	// Redis
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
-	implementation("org.springframework.boot:spring-boot-starter-cache:3.5.16")
+	implementation("org.springframework.boot:spring-boot-starter-cache")
 
 	// MapStruct
 	implementation "org.mapstruct:mapstruct:${mapstructVersion}"
