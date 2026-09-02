@@ -1,5 +1,7 @@
 package az.fleettrack.config;
 
+import az.fleettrack.security.CustomAccessDeniedHandler;
+import az.fleettrack.security.JwtAuthenticationEntryPoint;
 import az.fleettrack.security.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -19,6 +21,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class SecurityConfig {
 
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
+    private final JwtAuthenticationEntryPoint authenticationEntryPoint;
+    private final CustomAccessDeniedHandler accessDeniedHandler;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -70,6 +74,11 @@ public class SecurityConfig {
                         .hasRole("ADMIN")
 
                         .anyRequest().authenticated()
+                )
+
+                .exceptionHandling(exception -> exception
+                        .authenticationEntryPoint(authenticationEntryPoint)
+                        .accessDeniedHandler(accessDeniedHandler)
                 )
 
                 .addFilterBefore(
