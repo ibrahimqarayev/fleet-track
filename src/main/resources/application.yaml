@@ -31,7 +31,7 @@ spring:
       cache-null-values: false
 
 jwt:
-  secret: ${JWT_SECRET:gdFdJlFm4w0oUJjmN5UrIv2cVcF8wx37uwPJuoIvPGQ=}
+  secret: ${JWT_SECRET}
   expiration: ${JWT_EXPIRATION:3600000}
 
 server:
