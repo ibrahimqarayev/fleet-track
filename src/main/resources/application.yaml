@@ -3,9 +3,9 @@ spring:
     name: fleettrack
 
   datasource:
-    url: ${DB_URL}
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    url: jdbc:postgresql://localhost:${DB_PORT:5432}/${POSTGRES_DB:fleettrack_db}
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:postgres}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -22,12 +22,17 @@ spring:
 
   data:
     redis:
-      host: ${REDIS_HOST}
-      port: ${REDIS_PORT}
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+  cache:
+    type: redis
+    redis:
+      time-to-live: 10m
+      cache-null-values: false
 
 jwt:
-  secret: ${JWT_SECRET}
-  expiration: ${JWT_EXPIRATION}
+  secret: ${JWT_SECRET:gdFdJlFm4w0oUJjmN5UrIv2cVcF8wx37uwPJuoIvPGQ=}
+  expiration: ${JWT_EXPIRATION:3600000}
 
 server:
   port: ${SERVER_PORT:8080}
